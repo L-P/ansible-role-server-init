@@ -9,7 +9,7 @@ Mandatory configuration
 -----------------------
 ```yaml
 # Use this to generate init_user_password_crypted :
-# mkpasswd -m sha-512 'PASSWORD' "$(dd if=/dev/urandom bs=1M count=1 2> /dev/null | sha256sum | cut -c -16)"
+# mkpasswd -m sha-512 'PASSWORD'
 
 init_hostname:
 init_user_login:
