@@ -1,0 +1,35 @@
+---
+- name: Add {{init_user_login}} user.
+  user:
+    name="{{init_user_login}}"
+    groups="sudo,adm"
+    append=yes
+    shell="/bin/bash"
+    password="{{init_user_password_crypted}}"
+
+- name: Add {{init_user_login}} SSH key.
+  authorized_key:
+    user="{{init_user_login}}"
+    key="{{init_user_pubkey}}"
+
+- name: Disable root password.
+  user:
+    name="root"
+    password="!"
+  when: "ansible_user_id != 'root'"
+
+- name: Disable password login.
+  lineinfile:
+    dest="/etc/ssh/sshd_config"
+    regexp="^#?PasswordAuthentication"
+    line="PasswordAuthentication no"
+  notify: restart ssh
+  when: "ansible_user_id != 'root'"
+
+- name: Disable root login.
+  lineinfile:
+    dest="/etc/ssh/sshd_config"
+    regexp="^#?PermitRootLogin"
+    line="PermitRootLogin no"
+  notify: restart ssh
+  when: "ansible_user_id != 'root'"
