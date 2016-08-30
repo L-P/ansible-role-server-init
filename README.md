@@ -5,6 +5,8 @@ Server initialization.
 Can be run both as `root` and as any other sudoer.  
 This will only disable the `root` login if it can connect as a sudoer.
 
+**become** is required to run this role.
+
 Mandatory configuration
 -----------------------
 ```yaml
