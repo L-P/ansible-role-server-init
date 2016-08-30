@@ -1,34 +1,34 @@
 ---
-- name: Set hostname.
+- name: Set hostname
   hostname: name="{{init_hostname}}"
 
-- name: Replace hostname in hosts.
+- name: Replace hostname in hosts
   lineinfile:
     dest="/etc/hosts"
     regexp="^127\.0\.1\.1\t"
     line="127.0.1.1\t{{init_hostname}}"
 
-- name: Allow SSH through UFW.
+- name: Allow SSH through UFW
   ufw:
     rule="allow"
     name="OpenSSH"
 
-- name: Deny incoming connections by default.
+- name: Deny incoming connections by default
   ufw:
     state="enabled"
     policy="deny"
     direction="incoming"
 
-- name: Set vim as default editor.
+- name: Set vim as default editor
   alternatives:
     name="editor"
     path="/usr/bin/vim.basic"
 
-- name: Install fail2ban package.
+- name: Install fail2ban package
   apt:
     name="fail2ban"
 
-- name: Ensure fail2ban is running.
+- name: Ensure fail2ban is running
   service:
     name="fail2ban"
     state="started"
