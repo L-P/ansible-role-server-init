@@ -23,12 +23,3 @@
   alternatives:
     name="editor"
     path="/usr/bin/vim.basic"
-
-- name: Install fail2ban package
-  apt:
-    name="fail2ban"
-
-- name: Ensure fail2ban is running
-  service:
-    name="fail2ban"
-    state="started"

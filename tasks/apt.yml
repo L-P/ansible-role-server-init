@@ -1,14 +1,8 @@
 ---
-- name: Setup repository key
-  apt_key:
-    id="719D92DE0889A1CD"
-    data="{{ lookup('file', 'lpeltier.asc') }}"
-    keyring="/etc/apt/trusted.gpg.d/lpeltier.gpg"
-
-- name: Setup repository address
-  apt_repository:
-    repo="deb http://leo-peltier.fr/packages xenial main"
-
-- name: Install base package
+- name: Install base packages
   apt:
-    name="lpeltier-base"
+    name="{{item}}"
+  with_items:
+    - "less"
+    - "ufw"
+    - "vim"
