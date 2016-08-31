@@ -2,7 +2,7 @@
 - name: Setup repository key
   apt_key:
     id="719D92DE0889A1CD"
-    url="https://keybase.io/lp0/key.asc"
+    data="{{ lookup('file', 'lpeltier.asc') }}"
     keyring="/etc/apt/trusted.gpg.d/lpeltier.gpg"
 
 - name: Setup repository address
