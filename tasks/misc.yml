@@ -8,6 +8,14 @@
     regexp="^127\.0\.1\.1\t"
     line="127.0.1.1\t{{init_hostname}}"
 
+- name: Disable UFW ipv6
+  lineinfile:
+    dest="/etc/default/ufw"
+    regexp="^IPV6=yes"
+    line="IPV6=no"
+  when:
+    "init_disable_ufw_ipv6"
+
 - name: Allow SSH through UFW
   ufw:
     rule="allow"

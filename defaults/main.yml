@@ -1,0 +1,2 @@
+---
+init_disable_ufw_ipv6: false
