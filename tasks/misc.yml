@@ -11,7 +11,7 @@
 - name: Disable UFW ipv6
   lineinfile:
     dest="/etc/default/ufw"
-    regexp="^IPV6=yes"
+    regexp="^IPV6="
     line="IPV6=no"
   when:
     "init_disable_ufw_ipv6"
