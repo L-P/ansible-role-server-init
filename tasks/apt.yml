@@ -4,6 +4,7 @@
     name="{{item}}"
   with_items:
     - "less"
+    - "rsync"
     - "tmux"
     - "ufw"
     - "vim"
