@@ -1,2 +1,3 @@
 ---
 init_disable_ufw_ipv6: false
+init_ufw_open: []

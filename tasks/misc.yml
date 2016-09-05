@@ -21,6 +21,14 @@
     rule="allow"
     name="OpenSSH"
 
+- name: Open ports
+  ufw:
+    rule="allow"
+    to_port="{{item.to_port}}"
+    proto="{{item.proto}}"
+  with_items:
+    "{{init_ufw_open}}"
+
 - name: Deny incoming connections by default
   ufw:
     state="enabled"
