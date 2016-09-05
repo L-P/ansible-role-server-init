@@ -29,4 +29,12 @@ init_disable_ufw_ipv6:
 init_ufw_open:
   - to_port: 80
     proto: "tcp"
+
+# Files to write, eg.:
+init_files:
+  - content="foo"
+    dest="/bar"
+    owner="root"
+    group="root"
+    mode="0600"
 ```
