@@ -4,6 +4,7 @@
     name="{{item}}"
   with_items:
     - "aptitude"
+    - "bind9"
     - "cron"
     - "curl"
     - "less"
