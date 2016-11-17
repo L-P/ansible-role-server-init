@@ -44,11 +44,19 @@ init_files:
 None.
 
 ## Example Playbook
+Don't become on the whole play but on the role. If you become on the whole play
+you'll be root when the fact gathering occurs.
+This prevents the role from removing password-authenticated remote root access
+as we don't do it if `ansible_user_id` is root (to avoid locking ourselves
+out).
+
+This also means the role should be run at least twice, once as root to create
+the `ansible` user and once as `ansible` to remove root access.
+
 ```yaml
 - hosts: all
-  become: true
   roles:
-    - {role: L-P.server-init}
+    - {role: "L-P.server-init", become: true}
 ```
 
 ## License
