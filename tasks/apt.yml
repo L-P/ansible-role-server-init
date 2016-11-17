@@ -3,7 +3,10 @@
   apt:
     name="{{item}}"
   with_items:
+    # Needed for some Ansible apt module operations
     - "aptitude"
+
+    # Other basic packages thay me not be pre-installed on armhf
     - "cron"
     - "curl"
     - "less"
