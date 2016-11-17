@@ -1,0 +1,13 @@
+---
+dependencies: []
+galaxy_info:
+  author: "Léo Peltier"
+  description: "Basic server configuration"
+  license: "MIT"
+  galaxy_tags: []
+
+  min_ansible_version: 2.1
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "xenial"
