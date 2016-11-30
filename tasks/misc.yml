@@ -5,8 +5,8 @@
 - name: Replace hostname in hosts
   lineinfile:
     dest="/etc/hosts"
-    regexp="^127\.0\.1\.1\t"
-    line="127.0.1.1\t{{init_hostname}}"
+    regexp="^127\.0\.1\.1[^\d]"
+    line="127.0.1.1 {{init_hostname}}"
 
 - name: Disable UFW ipv6
   lineinfile:
