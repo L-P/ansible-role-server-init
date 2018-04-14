@@ -13,7 +13,7 @@ Role created for Ubuntu 16.04 amd64 and armhf.
 ### Mandatory
 ```yaml
 # Use this to generate init_user_password_crypted:
-# mkpasswd -m sha-512 'PASSWORD'
+# mkpasswd -m sha-512
 
 init_hostname:
 init_user_login:
