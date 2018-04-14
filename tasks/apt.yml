@@ -6,7 +6,7 @@
     # Needed for some Ansible apt module operations
     - "aptitude"
 
-    # Other basic packages thay me not be pre-installed on armhf
+    # Other basic packages that may not be pre-installed on armhf or Debian
     - "cron"
     - "curl"
     - "less"

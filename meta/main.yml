@@ -11,3 +11,6 @@ galaxy_info:
     - name: "Ubuntu"
       versions:
         - "xenial"
+    - name: "Debian"
+      versions:
+        - "stretch"
